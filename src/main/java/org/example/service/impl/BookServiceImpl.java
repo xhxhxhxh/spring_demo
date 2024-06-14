@@ -15,4 +15,12 @@ public class BookServiceImpl implements BookService {
   public void setBookDao(BookDao bookDao) {
     this.bookDao = bookDao;
   }
+
+  public void init() {
+    System.out.println("init");
+  }
+
+  public void destroy() {
+    System.out.println("destroy");
+  }
 }
