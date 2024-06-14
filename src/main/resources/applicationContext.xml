@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="bookDao" class="org.example.dao.impl.BookDaoImpl"></bean>
+    <bean id="bookService" class="org.example.service.impl.BookServiceImpl">
+<!--        配置关系 name表示哪个属性 ref表示参照哪个bean-->
+        <property name="bookDao" ref="bookDao"></property>
+    </bean>
+</beans>
