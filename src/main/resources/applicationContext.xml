@@ -7,5 +7,24 @@
     <bean id="bookService" name="s1 s2" class="org.example.service.impl.BookServiceImpl" scope="singleton" init-method="init" destroy-method="destroy">
 <!--        配置关系 name表示哪个属性 ref表示参照哪个bean-->
         <property name="bookDao" ref="bookDao"></property>
+        <property name="name" value="哈哈哈"></property>
+        <property name="ages">
+            <array>
+                <value>11</value>
+                <value>22</value>
+            </array>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="1" value="你好" ></entry>
+                <entry key="2" value="你好ff" ></entry>
+            </map>
+        </property>
+        <property name="myProperties">
+            <props>
+                <prop key="name">张三</prop>
+                <prop key="age">22</prop>
+            </props>
+        </property>
     </bean>
 </beans>
