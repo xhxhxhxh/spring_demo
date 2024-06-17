@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="bookDao" class="org.example.dao.impl.BookDaoImpl"></bean>
 <!--    scope设置为singleton-单例 prototype-非单例-->
+<!--    lazy-init 延迟加载-->
     <bean id="bookService" name="s1 s2" class="org.example.service.impl.BookServiceImpl" scope="singleton" init-method="init" destroy-method="destroy">
 <!--        配置关系 name表示哪个属性 ref表示参照哪个bean-->
         <property name="bookDao" ref="bookDao"></property>
