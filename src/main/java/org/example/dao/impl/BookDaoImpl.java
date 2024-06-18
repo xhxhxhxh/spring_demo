@@ -12,7 +12,12 @@ import javax.annotation.PreDestroy;
 public class BookDaoImpl implements BookDao {
   @Override
   public void save() {
-    System.out.println("BookDao save");
+
+    System.out.println("当前系统时间" + System.currentTimeMillis());
+  }
+
+  public void update() {
+    System.out.println("update BookDao");
   }
 
   @PreDestroy
