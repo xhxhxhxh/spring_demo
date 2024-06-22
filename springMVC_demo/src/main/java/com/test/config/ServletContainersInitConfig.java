@@ -2,8 +2,11 @@ package com.test.config;
 
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -20,6 +23,13 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
   @Override
   protected String[] getServletMappings() {
     return new String[]{"/"};
+  }
+
+  // post请求中文问题
+  @Override
+  protected Filter[] getServletFilters() {
+    CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter("UTF-8", true);
+    return new Filter[]{characterEncodingFilter};
   }
 }
 
