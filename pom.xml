@@ -11,6 +11,7 @@
     <modules>
 
         <module>springMVC_demo</module>
+        <module>spting_SSM</module>
     </modules>
 
     <properties>
