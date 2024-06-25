@@ -16,6 +16,11 @@ public class UsersController {
     @GetMapping
     public Result<List<User>> getAll() {
         List<User> users = userService.checkAll();
+        try {
+            int i = 1 / 0;
+        } catch (Exception e) {
+            throw new SystemException(Codes.SYSTEM_ERROR, "系统异常");
+        }
         return new Result<>(Codes.GET_OK, users);
     }
 
